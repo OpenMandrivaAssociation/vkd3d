@@ -208,6 +208,7 @@ cd ..
 %{_libdir}/libvkd3d-shader.so.1*
 
 %files -n %{devshader}
+%{_bindir}/vkd3d-compiler
 %{_includedir}/vkd3d/vkd3d_shader.h
 %{_libdir}/libvkd3d-shader.so
 %{_libdir}/pkgconfig/libvkd3d-shader.pc
