@@ -20,7 +20,7 @@
 %define lib32shader %mklib32name %{name}-shader 1
 %define dev32shader %mklib32name -d %{name}-shader
 
-%define date 20200702
+#define date 20200702
 
 Name:		vkd3d
 Version:	1.2
