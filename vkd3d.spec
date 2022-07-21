@@ -23,8 +23,8 @@
 #define date 20200702
 
 Name:		vkd3d
-Version:	1.2
-Release:	%{?date:0.%{date}.}2
+Version:	1.4
+Release:	%{?date:0.%{date}.}1
 Summary:	D3D12 to Vulkan translation library
 
 License:	LGPLv2+
@@ -34,6 +34,8 @@ URL:		https://source.winehq.org/git/vkd3d.git
 # https://github.com/ValveSoftware/vkd3d
 Source0:	https://dl.winehq.org/vkd3d/source/%{name}-%{version}%{?date:-%{date}}.tar.xz
 
+BuildRequires:  bison
+BuildRequires:  flex
 BuildRequires:	pkgconfig(xcb)
 BuildRequires:	spirv-headers
 BuildRequires:	pkgconfig(SPIRV-Tools)
@@ -192,6 +194,9 @@ cd ..
 %{_includedir}/vkd3d/vkd3d_dxgiformat.h
 %{_includedir}/vkd3d/vkd3d.h
 %{_includedir}/vkd3d/vkd3d_types.h
+%{_includedir}/vkd3d/vkd3d_d3d9types.h
+%{_includedir}/vkd3d/vkd3d_d3dcompiler.h
+%{_includedir}/vkd3d/vkd3d_d3dx9shader.h
 %{_includedir}/vkd3d/vkd3d_windows.h
 %{_libdir}/libvkd3d.so
 %{_libdir}/pkgconfig/libvkd3d.pc
