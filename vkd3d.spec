@@ -194,6 +194,9 @@ cd ..
 %{_includedir}/vkd3d/vkd3d_dxgiformat.h
 %{_includedir}/vkd3d/vkd3d.h
 %{_includedir}/vkd3d/vkd3d_types.h
+%{_includedir}/vkd3d/vkd3d_d3d9types.h
+%{_includedir}/vkd3d/vkd3d_d3dcompiler.h
+%{_includedir}/vkd3d/vkd3d_d3dx9shader.h
 %{_includedir}/vkd3d/vkd3d_windows.h
 %{_libdir}/libvkd3d.so
 %{_libdir}/pkgconfig/libvkd3d.pc
