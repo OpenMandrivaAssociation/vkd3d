@@ -47,6 +47,7 @@ BuildRequires:	pkgconfig(xcb-icccm)
 BuildRequires:	mingw
 
 %if %{with compat32}
+BuildRequires:  libc6
 BuildRequires:	devel(libxcb)
 BuildRequires:	devel(libXau)
 BuildRequires:	devel(libXdmcp)
