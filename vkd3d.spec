@@ -23,8 +23,8 @@
 #define date 20200702
 
 Name:		vkd3d
-Version:	1.12
-Release:	%{?date:0.%{date}.}2
+Version:	1.14
+Release:	%{?date:0.%{date}.}1
 Summary:	D3D12 to Vulkan translation library
 
 License:	LGPLv2+
