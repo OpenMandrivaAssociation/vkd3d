@@ -36,6 +36,7 @@ Source0:	https://dl.winehq.org/vkd3d/source/%{name}-%{version}%{?date:-%{date}}.
 
 BuildRequires:  bison
 BuildRequires:  flex
+BuildRequires:  perl-JSON
 BuildRequires:	pkgconfig(xcb)
 BuildRequires:	spirv-headers
 BuildRequires:	pkgconfig(SPIRV-Tools)
