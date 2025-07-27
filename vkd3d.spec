@@ -24,7 +24,7 @@
 
 Name:		vkd3d
 Version:	1.16
-Release:	%{?date:0.%{date}.}2
+Release:	%{?date:0.%{date}.}3
 Summary:	D3D12 to Vulkan translation library
 
 License:	LGPLv2+
