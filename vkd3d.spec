@@ -34,6 +34,11 @@ URL:		https://source.winehq.org/git/vkd3d.git
 # https://github.com/ValveSoftware/vkd3d
 Source0:	https://dl.winehq.org/vkd3d/source/%{name}-%{version}%{?date:-%{date}}.tar.xz
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:  bison
 BuildRequires:  flex
 BuildRequires:  perl-JSON
