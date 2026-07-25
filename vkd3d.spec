@@ -23,7 +23,7 @@
 #define date 20200702
 
 Name:		vkd3d
-Version:	1.19
+Version:	2.0
 Release:	%{?date:0.%{date}.}1
 Summary:	D3D12 to Vulkan translation library
 
@@ -168,7 +168,13 @@ export CONFIGURE_TOP="$(pwd)"
 %if %{with compat32}
 mkdir build32
 cd build32
+# clang -m32 uses --sysroot=/usr/i686-openmandriva-linux-gnu and does not
+# search /usr/lib, where OpenMandriva installs multilib libraries.
+_vkd3d_ldflags_save="${LDFLAGS:-%{build_ldflags}}"
+export LDFLAGS="${_vkd3d_ldflags_save} -L%{_prefix}/lib"
 %configure32 --with-spirv-tools
+export LDFLAGS="${_vkd3d_ldflags_save}"
+unset _vkd3d_ldflags_save
 cd ..
 %endif
 mkdir build
