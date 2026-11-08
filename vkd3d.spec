@@ -24,7 +24,7 @@
 
 Name:		vkd3d
 Version:	2.1
-Release:	%{?date:0.%{date}.}1
+Release:	%{?date:0.%{date}.}2
 Summary:	D3D12 to Vulkan translation library
 Group:		System/Libraries
 
@@ -55,6 +55,12 @@ BuildRequires:	mingw
 
 %if %{with compat32}
 BuildRequires:  libc6
+# clang 23 -m32 links compiler-rt, not libgcc.a. The i386 builtins live
+# in the cross-i686 clang package, with the matching sysroot.
+BuildRequires:	cross-i686-openmandriva-linux-gnu-clang
+BuildRequires:	cross-i686-openmandriva-linux-gnu-libc
+BuildRequires:	cross-i686-openmandriva-linux-gnu-binutils
+BuildRequires:	cross-i686-openmandriva-linux-gnu-gcc
 BuildRequires:	devel(libxcb)
 BuildRequires:	devel(libXau)
 BuildRequires:	devel(libXdmcp)
