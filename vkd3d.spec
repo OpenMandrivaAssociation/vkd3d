@@ -23,9 +23,10 @@
 #define date 20200702
 
 Name:		vkd3d
-Version:	2.0
+Version:	2.1
 Release:	%{?date:0.%{date}.}1
 Summary:	D3D12 to Vulkan translation library
+Group:		System/Libraries
 
 License:	LGPLv2+
 URL:		https://source.winehq.org/git/vkd3d.git
@@ -36,7 +37,6 @@ Source0:	https://dl.winehq.org/vkd3d/source/%{name}-%{version}%{?date:-%{date}}.
 
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libtool-base
 BuildRequires:	slibtool
 BuildRequires:	make
 BuildRequires:  bison
@@ -172,14 +172,14 @@ cd build32
 # search /usr/lib, where OpenMandriva installs multilib libraries.
 _vkd3d_ldflags_save="${LDFLAGS:-%{build_ldflags}}"
 export LDFLAGS="${_vkd3d_ldflags_save} -L%{_prefix}/lib"
-%configure32 --with-spirv-tools
+%configure32 --with-spirv-tools --disable-doxygen-doc
 export LDFLAGS="${_vkd3d_ldflags_save}"
 unset _vkd3d_ldflags_save
 cd ..
 %endif
 mkdir build
 cd build
-%configure --with-spirv-tools
+%configure --with-spirv-tools --disable-doxygen-doc
 cd ..
 
 %build
@@ -201,6 +201,9 @@ cd ..
 
 %files -n %{devname}
 %dir %{_includedir}/vkd3d
+%{_includedir}/vkd3d/vkd3d_d3d10shader.h
+%{_includedir}/vkd3d/vkd3d_d3d10_1shader.h
+%{_includedir}/vkd3d/vkd3d_d3d11shader.h
 %{_includedir}/vkd3d/vkd3d_d3d12.h
 %{_includedir}/vkd3d/vkd3d_d3d12sdklayers.h
 %{_includedir}/vkd3d/vkd3d_d3dcommon.h
